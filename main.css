@@ -1,0 +1,17 @@
+.cadeira{
+    width: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    
+
+}
+
+.imgConteiner{
+    background-color: wheat;
+    width: 6%;
+    float: left;
+}
+.sala{
+    width: 40%;
+    margin: 0 auto;
+}
