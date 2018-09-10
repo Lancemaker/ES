@@ -12,6 +12,7 @@ Renderer = {
     canvas.innerHTML=state;
     }
 }
+
 cadeiras = {
     PrintaCadeira(i){
         number=i;
@@ -29,12 +30,13 @@ cadeiras = {
 let state0="";
 //pagina 1
 
-let state1= "<p style=\"text-align:center\">Escolha sua cadeira<p>"+cadeiras.PrintaCadeira(300);
+let state1= cadeiras.PrintaCadeira(150);
 //pagina 2
-let state2="<p>2</p>";
+let state2=load("/filmes.html");
+
 let states=[state0,state1,state2];
 
-Renderer.render(states[1])
+Renderer.render(states[2])
 
 
 
@@ -50,4 +52,6 @@ function MudaFundo(e) {
 
 }
 
+///////////////////////carregando codigo dinamicamente:
 
+  
