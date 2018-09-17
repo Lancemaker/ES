@@ -27,17 +27,42 @@ cadeiras = {
 
 
 //clear
-let state0="";
+let state0="<h1><em> Seja bem vindo </em></h1>";
 //pagina 1
 
 let state1= cadeiras.PrintaCadeira(150);
 //pagina 2
-let state2=load("/filmes.html");
+let state2= "";
+
 
 let states=[state0,state1,state2];
 
-Renderer.render(states[2])
+let estadoAtual = 0;
 
+Renderer.render(states[estadoAtual]);
+
+ function mudaEstado(n){
+estadoAtual=n;
+if(estadoAtual==2){
+    state2=load("filmes.html")
+}
+Renderer.render(states[parseInt(estadoAtual)]);
+
+}
+
+
+
+///////////////////////////////////LoadFiles
+function load(file){
+var client = new XMLHttpRequest();
+client.open('GET', file);
+
+client.onload = function() {          
+    Renderer.render(client.responseText);       
+        return client.responseText;   
+}
+client.send();
+}
 
 
 ///////////////////////////////////////Click Events Nas cadeiras.
@@ -51,7 +76,6 @@ function MudaFundo(e) {
    
 
 }
-
 ///////////////////////carregando codigo dinamicamente:
 
   

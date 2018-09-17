@@ -11,6 +11,11 @@
     width: 6%;
     float: left;
 }
+.imgConteinerFilmes{
+    width: 20%; 
+    float:left;
+
+}
 .sala{
     width: 40%;
     margin: 0 auto;
@@ -33,6 +38,9 @@
      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp2s7s0kxtLSaqnSrYBC8jfmspEo7WP1ZyeMnfY9G0Lwg9RgVK");
      color: whitesmoke;
      margin: 0 0;
+ }
+ .imagens{
+    max-height: 365px;
  }
  
  body {
