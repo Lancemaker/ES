@@ -60,7 +60,7 @@ function mudaEstado(n) {
         state2 = load("filmes.html");
             break;
         case 3:
-        state3 = load("pagamento.html");        
+        state3=load("ticket.html");      
             break;
         case 4:
         state4 = load("contatos.html");
@@ -73,7 +73,6 @@ function mudaEstado(n) {
     }
     
     Renderer.render(states[parseInt(estadoAtual)]);
-
 }
 
 
@@ -107,6 +106,13 @@ function MudaFundo(e) {
 
 function guardaFilme(filme){
     conta.filme = filme;    
+}
+
+function printaTicket(){
+    let text = dom.getElementById("myText");
+    text.innerHTML="<p>preço:"+conta.preco+"</p>"+
+                    "<p>Filme:"+conta.filme+"</p>"+
+                    "<p>Cadeira:"+conta.cadeira+"</p>";
 }
 
 

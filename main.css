@@ -60,3 +60,17 @@
  .logo {
      text-align:center;
  }
+
+ .botaoTicket{
+     color: white;
+     height: 100px;
+     text-decoration:none;
+ }
+
+ .botao{
+    background-color: darkslategrey;
+    width: 10%;
+    padding: 1%;
+    margin: 0 auto;
+    border-radius: 5%
+ }
