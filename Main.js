@@ -29,7 +29,7 @@ cadeiras = {
         let text = "<div class=\"sala\">";
         image = "img/cadeira.png";
         for (let index = 0; index < number; index++) {
-            text += "<div onclick=\"MudaFundo(event)\" id=\"cad\"class=\"imgConteiner\"><img src=" + image + " alt="+i+" id=\"imagemCadeira\" class=\"cadeira\"></div>"
+            text += "<div onclick=\"MudaFundo(event)\" id=\"cad\"class=\"imgConteiner\"><img src=" + image + " alt="+i+" id=\"imagemCadeira\" class=\"cadeira\"></div>";
         }
         return text += "</div>";
     }
@@ -42,9 +42,8 @@ let state0 = "<h1><em> Seja bem vindo </em></h1>";
 
 let state1 = cadeiras.PrintaCadeira(144);
 //pagina 2 
-let state2,state4,state5="";
+let state2,state3,state4,state5="";
 
-let state3 = "<h1><em>Pagamento</em></h1><p>preço : "+conta.preco+"</p><p>filme : "+conta.filme+"</p><p>preço : "+conta.cadeira+"</p>";
 let states = [state0, state1, state2,state3,state4,state5];
 
 let estadoAtual = 0;
@@ -60,7 +59,9 @@ function mudaEstado(n) {
         case 2:
         state2 = load("filmes.html");
             break;
-        
+        case 3:
+        state3 = load("pagamento.html");        
+            break;
         case 4:
         state4 = load("contatos.html");
             break;
@@ -72,6 +73,7 @@ function mudaEstado(n) {
     }
     
     Renderer.render(states[parseInt(estadoAtual)]);
+
 }
 
 
@@ -93,7 +95,7 @@ function load(file) {
 function MudaFundo(e) {
     if(conta.cadeira==""){
         e.target.parentNode.style.backgroundColor = "red"
-        conta.cadeira=e.target.alt;
+        conta.cadeira=e.target.alt;        
     }
     //if (e.target.parentNode.style.backgroundColor == "red") {
     //    e.target.parentNode.style.backgroundColor = "wheat";
@@ -104,8 +106,7 @@ function MudaFundo(e) {
 }
 
 function guardaFilme(filme){
-    conta.filme = filme;
+    conta.filme = filme;    
 }
-
 
 
